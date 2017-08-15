@@ -1,0 +1,121 @@
+<md-dialog class="dialog" flex-gt-sm='40'>
+   <md-dialog-content ng-show="landingPage">
+      <div class="modal-header cus-login-popup" >
+         <button type="button" class="close" data-dismiss="modal" ng-click="obj.closeClick()">&times;</button>
+         <h4 class="modal-title">Sign Up or Log In to Fidato</h4>
+      </div>
+      <div class="md-dialog-content login-popup">
+         <div layout-wrap layout-gt-sm="row">
+            <div class="loginsocial">
+               <div class="logsign-btn text-center">
+                  <a ng-click=obj.loginClick()>Log in</a>
+                  <a ng-click=obj.signUpClick() class="signup-s">Sign up</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      </md-dialog-content>
+
+
+      <!-- Login Page -->
+      <md-dialog-content class="login_pop_payment_page" ng-show=loginPage>
+      <div class="modal-header cus-login-popup" >
+         <button type="button" class="close" data-dismiss="modal" ng-click="obj.closeClick()">&times;</button>
+         <h4 class="modal-title">Log in to Fidato</h4>
+      </div>
+      <div class="modal-body"  >
+         <div class="loginsocial logsocial-s">
+            <form>
+               <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" ng-model="obj.email" ng-keyup='obj.loginEmailValidate()'>
+                  <span class='span-color' ng-if="obj.emailErr!=null">{{obj.emailErr}}</span>
+               </div>
+               <div class="form-group">
+                  <label for="pwd">Password</label>
+                  <input type="password" class="form-control" ng-model="obj.password" ng-keyup='obj.loginPasswordValidate()'>
+                  <span class='span-color' ng-if="obj.passwordErr!=null">{{obj.passwordErr}}</span>
+               </div>
+               <div class="checkbox sendme-s">
+                  <label><input type="checkbox" ng-model="obj.remember" ng-if="checkbox=true"> Remember me</label>
+                  <span class="forgot-pass-s zred" ng-click='obj.forgotClick()'><a>Forgot password?</a></span>
+               </div>
+               <div layout="row" layout-align="center center" style="padding-top:20px;">
+                  <span class='span-color' ng-if="obj.failureErr!=null">{{obj.failureErr}}</span>
+               </div>
+               <div class="logsign-btn signup-logins text-center" ng-click='obj.login()'>
+                  <a href="">Log in</a>                
+               </div>
+            </form>
+         </div>
+      </div>
+      </md-dialog-content>
+
+
+      <!-- *********************Forgot Page************************* -->
+      <md-dialog-content ng-show=forgotPage>
+      <div class="modal-header cus-login-popup" >
+         <button type="button" class="close" data-dismiss="modal" ng-click="obj.closeClick()">&times;</button>
+         <h4 class="modal-title">Reset your password</h4>
+      </div>
+      <div class="modal-body"  >
+         <div class="loginsocial logsocial-s">
+            <form>
+               <div class="form-group">
+                  <div class="forgot-new-lbl">
+                     <label> Please enter the email address you signed up with and we'll send you a password reset link. </label>
+                  </div>
+                  <div class="forgot-new-lbl-div" ng-show='forgotLinkSend'>
+                     <label> Recovery email sent. Please check your inbox. </label>
+                  </div>
+                  <label for="email">Email Address</label>
+                  <input type="email" class="form-control" ng-model="obj.forgotEmail" ng-keyup='obj.forgotEventChange()'>
+                  <span style='color:red;' ng-if="obj.forgotEmailErr!=null">{{obj.forgotEmailErr}}</span>
+               </div>
+               <div layout="row" layout-align="center center" style="padding-top:20px;">
+                  <span style='color:red;' ng-if="obj.failureErr!=null">{{obj.failureErr}}</span>
+               </div>
+               <div class="logsign-btn signup-logins text-center" ng-click='obj.forgotBtnClick()'>
+                  <a href="">Reset Password</a>                
+               </div>
+            </form>
+         </div>
+      </div>
+      </md-dialog-content>
+
+
+      <!-- ********************* END Forgot Page************************* -->
+      <!-- Register Page -->
+      <md-dialog-content class="pop_signup_payment" ng-show="registerPage">
+      <div class="modal-header cus-login-popup" >
+         <button type="button" class="close" data-dismiss="modal" ng-click="obj.closeClick()">&times;</button>
+         <h4 class="modal-title">Sign up to Fidato</h4>
+      </div>
+      <div class="modal-body" >
+         <div class="loginsocial logsocial-s">
+            <form>
+               <div class="form-group">
+                  <label for="email">Full Name:</label>
+                  <input type="text" class="form-control" ng-model="obj.full_name" ng-keyup="obj.fullNameValidation()">
+                  <span style='color:red;'  ng-if="obj.fullnameErr!=null">{{obj.fullnameErr}}</span>
+               </div>
+               <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" class="form-control" ng-model="obj.signupEmail" ng-keyup="obj.emailValidation()">
+                  <span style='color:red;' ng-if="obj.signupEmailErr!=null">{{obj.signupEmailErr}}</span>
+               </div>
+               <div class="form-group">
+                  <label for="pwd">Password</label>
+                  <input type="password" class="form-control" ng-model="obj.signupPassword" ng-keyup="obj.passwordValidation()">
+                  <span style='color:red;' ng-if="obj.signupPasswordErr!=null">{{obj.signupPasswordErr}}</span>
+               </div>
+               <div class="logsign-btn signup-logins text-center" ng-click="obj.signup()">
+                  <a href="">Register</a>     
+               </div>
+            </form>
+         </div>
+      </div>
+      </md-dialog-content>
+
+
+</md-dialog>

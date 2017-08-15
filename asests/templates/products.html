@@ -1,0 +1,32 @@
+<div class="container" style="margin-top: 70px;background:#F4D03F">
+   <div class="rows">
+      <div class="col-sm-12">
+         <!-- <div class='help-aust'>
+            <label >Let's begin helping Australians together</label>
+            </div> -->
+         <md-card>
+            <div class="oper-hour signup-a">
+               <md-content layout-padding class="list-form" style="background-color:#FFFFFF">
+                  <h3 class="title-a1">List your Products Here</h3>
+                  <div layout-wrap layout-gt-sm="row">
+                        <md-input-container md-no-float class="md-block" flex-gt-sm="80">
+                           <div class="label-hdng">Name your Products</div>
+                           <input ng-model="productName">
+                           <span class="span-color" ng-if="productNameErr!=null">{{productNameErr}}</span>
+                        </md-input-container>
+                     </div>
+                     <div layout-wrap layout-gt-sm="row">
+                        <md-input-container md-no-float class="md-block" flex-gt-sm="80">
+                           <div class="label-hdng">Description about your Product</div>
+                           <textarea class="textarea-a2 margin-bottom10" ng-model="description" maxlength="400" ng-required="required"></textarea>
+                           <span class="span-color" ng-if="descriptionErr!=null">{{descriptionErr}}</span>
+                        </md-input-container>
+                     </div>
+                     <md-button class="btn-green savegreen-btn" ng-click='Addproducts()'>Add Products</md-button>
+                     <span class="span-color" ng-if='apiError!=null'>{{apiError}}</span>
+               </md-content>
+            </div>
+         </md-card>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,65 @@
+ <nav class="navbar navbar-inverse navbar-fixed-top cus-nav" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="app.home"><img src="static/image/fidato.png"/></span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right list-nav-s">
+            <li class="first" ng-if="app.isLogin">
+                    <a ui-sref="app.createProducts">Create Products</a>
+                </li>
+            	<li class="xs-table-cell" ng-if="app.isLogin">
+                	<a>{{app.EmailID}}<i style="padding-left: 5px;"></i></a>
+                </li>
+				<li>
+					<md-button class="md-raised md-green m-l-15" ng-click='login()' ng-if="!app.isLogin">Sign In</md-button>
+				</li>
+				<li ng-click='logout()' ng-if="app.isLogin">
+                	<a herf=""> | Log out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+	<div class="content">
+		<div ui-view="content"></div>
+        <div class="footermenu-s">
+			<div class="container">
+				<div class="row ftr-menu-links">
+					<div class="col-sm-6 col-xs-12">
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<ul class="social-link">
+							<li class="first">Connect</li>
+							<li><a href="https://www.facebook.com/squaredSD" target="_self" ><i class="fa fa-facebook"></i></a></li>
+							<li><a href="https://www.instagram.com/squaredSD" target="_self" ><i class="fa fa-instagram"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-links">
+			<div class="container">
+				<div class="row green-ftr">
+					<div class="col-sm-6 col-xs-12">
+						<div class="copy">© Copyright SquaredSD Pty Ltd 2017. All Rights Reserved.</div>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<ul class="policy-link">
+							<li><span>Community Guidelines</span></li>
+							<li><span>Terms of Use and Booking Conditions</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	
